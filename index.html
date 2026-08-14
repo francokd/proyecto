@@ -1,12 +1,156 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Proyecto</title>
+    <title>Venta de Programas | Tu Solución Digital</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- Iconos de FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    
+    <!-- Barra de Navegación -->
+    <header>
+        <div class="logo">Venta de<span>Programas</span></div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#catalogo">Catálogo</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Sección Principal (Hero) -->
+    <section id="inicio" class="hero">
+        <div class="hero-content">
+            <h1>Potencia tu PC con el <span>Software Ideal</span></h1>
+            <p>Descubre las mejores herramientas digitales, licencias y programas para llevar tu productividad y rendimiento al máximo nivel.</p>
+            <a href="#catalogo" class="btn-primary">Ver Programas</a>
+        </div>
+    </section>
+
+    <!-- Sección de Catálogo / Servicios (Tarjetas 3D) -->
+    <section id="catalogo" class="products">
+        <h2>Nuestro Catálogo</h2>
+        <div class="grid">
+            
+            <!-- Tarjeta 1: Productividad -->
+            <div class="card-container">
+                <div class="card-inner">
+                    <!-- Frente -->
+                    <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80');">
+                        <div class="front-overlay"></div>
+                        <div class="front-content">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <h3>Productividad</h3>
+                            <div class="btn-flip">
+                                Toca para Detalles <i class="fas fa-sync-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dorso (Detalle Oculto) -->
+                    <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1497215728101-856f4ea42174?auto=format&fit=crop&w=600&q=80');">
+                        <div class="back-overlay"></div>
+                        <div class="back-content">
+                            <h3>Productividad</h3>
+                            <p>Maximiza tu tiempo con las mejores herramientas empresariales y creativas.</p>
+                            <ul class="detail-list">
+                                <li><i class="fas fa-check"></i> Paquetes de Ofimática</li>
+                                <li><i class="fas fa-check"></i> Diseño y Modelado</li>
+                                <li><i class="fas fa-check"></i> Edición Profesional</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 2: Entretenimiento -->
+            <div class="card-container">
+                <div class="card-inner">
+                    <!-- Frente -->
+                    <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80');">
+                        <div class="front-overlay"></div>
+                        <div class="front-content">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-gamepad"></i>
+                            </div>
+                            <h3>Entretenimiento</h3>
+                            <div class="btn-flip">
+                                Toca para Detalles <i class="fas fa-sync-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dorso (Detalle Oculto) -->
+                    <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=600&q=80');">
+                        <div class="back-overlay"></div>
+                        <div class="back-content">
+                            <h3>Entretenimiento</h3>
+                            <p>Optimiza tus FPS y lleva tu experiencia gamer al nivel competitivo más alto.</p>
+                            <ul class="detail-list">
+                                <li><i class="fas fa-check"></i> Optimizadores de Juegos</li>
+                                <li><i class="fas fa-check"></i> Macros y Herramientas</li>
+                                <li><i class="fas fa-check"></i> Software de Streaming</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Tarjeta 3: Seguridad -->
+            <div class="card-container">
+                <div class="card-inner">
+                    <!-- Frente -->
+                    <div class="card-front" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80');">
+                        <div class="front-overlay"></div>
+                        <div class="front-content">
+                            <div class="icon-wrapper">
+                                <i class="fas fa-shield-alt"></i>
+                            </div>
+                            <h3>Seguridad</h3>
+                            <div class="btn-flip">
+                                Toca para Detalles <i class="fas fa-sync-alt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Dorso (Detalle Oculto) -->
+                    <div class="card-back" style="background-image: url('https://images.unsplash.com/photo-1526304640581-d334cdbbf45e?auto=format&fit=crop&w=600&q=80');">
+                        <div class="back-overlay"></div>
+                        <div class="back-content">
+                            <h3>Seguridad</h3>
+                            <p>Protege tu información y mantén tu sistema limpio de amenazas digitales.</p>
+                            <ul class="detail-list">
+                                <li><i class="fas fa-check"></i> Antivirus Premium</li>
+                                <li><i class="fas fa-check"></i> Limpieza Profunda</li>
+                                <li><i class="fas fa-check"></i> Gestores de Privacidad</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Pie de Página -->
+    <footer id="contacto">
+        <div class="footer-content">
+            <h3 class="footer-title">Impulsa tu Camino</h3>
+            <p class="quote">"El único límite para tu éxito es tu determinación. Equípate con las mejores herramientas y construye el futuro que imaginas."</p>
+            
+            <div class="whatsapp-container">
+                <a href="https://wa.me/593987572732" target="_blank" class="btn-whatsapp">
+                    <i class="fab fa-whatsapp"></i> Contáctanos por WhatsApp
+                </a>
+            </div>
+        </div>
+        <div class="copyright">
+            <p>&copy; 2026 Venta de Programas. Todos los derechos reservados.</p>
+        </div>
+    </footer>
 </body>
 </html>

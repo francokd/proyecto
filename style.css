@@ -1,0 +1,481 @@
+/* ================= Variables de Color ================= */
+:root {
+    --bg-dark: #0b0c10;
+    --surface-dark: #1f2833;
+    --accent-neon: #66fcf1;
+    --accent-dark: #45a29e;
+    --text-light: #c5c6c7;
+    --text-white: #ffffff;
+    --whatsapp-green: #25d366;
+}
+
+/* ================= Reset Básico ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: var(--text-light);
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+/* ================= Header y Navegación ================= */
+header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    background: rgba(11, 12, 16, 0.85);
+    backdrop-filter: blur(12px);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8%;
+    z-index: 1000;
+    border-bottom: 1px solid rgba(102, 252, 241, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: var(--text-white);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.logo span {
+    color: var(--accent-neon);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 35px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: var(--text-white);
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+nav ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 2px;
+    bottom: 0;
+    left: 0;
+    background-color: var(--accent-neon);
+    transition: width 0.3s ease;
+    box-shadow: 0 0 10px var(--accent-neon);
+}
+
+nav ul li a:hover {
+    color: var(--accent-neon);
+}
+
+nav ul li a:hover::after {
+    width: 100%;
+}
+
+/* ================= Hero Section (Inicio) ================= */
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 20px;
+    background: radial-gradient(circle at top right, #1f2833 0%, #0b0c10 70%);
+    position: relative;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 40vw;
+    height: 40vw;
+    background: var(--accent-neon);
+    border-radius: 50%;
+    filter: blur(180px);
+    opacity: 0.15;
+    animation: pulseLight 6s infinite alternate ease-in-out;
+    z-index: 0;
+}
+
+@keyframes pulseLight {
+    0% { transform: scale(0.8) translate(10%, 10%); }
+    100% { transform: scale(1.2) translate(-10%, -10%); }
+}
+
+.hero-content {
+    z-index: 1;
+    max-width: 900px;
+    animation: floatUp 1.2s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+@keyframes floatUp {
+    from { opacity: 0; transform: translateY(50px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    color: var(--text-white);
+    margin-bottom: 25px;
+    line-height: 1.1;
+    font-weight: 800;
+}
+
+.hero h1 span {
+    color: var(--accent-neon);
+    text-shadow: 0 0 25px rgba(102, 252, 241, 0.4);
+}
+
+.hero p {
+    font-size: 1.25rem;
+    margin-bottom: 45px;
+    color: var(--text-light);
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.btn-primary {
+    display: inline-block;
+    padding: 16px 45px;
+    background: transparent;
+    color: var(--accent-neon);
+    border: 2px solid var(--accent-neon);
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: all 0.4s ease;
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.1);
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-primary:hover {
+    background: var(--accent-neon);
+    color: var(--bg-dark);
+    box-shadow: 0 0 35px rgba(102, 252, 241, 0.6);
+    transform: translateY(-3px);
+}
+
+/* ================= Sección de Catálogo (Efecto Flip 3D) ================= */
+.products {
+    padding: 120px 8%;
+    background-color: var(--bg-dark);
+    position: relative;
+}
+
+.products h2 {
+    text-align: center;
+    font-size: 3rem;
+    color: var(--text-white);
+    margin-bottom: 70px;
+    position: relative;
+    display: inline-block;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.products h2::after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: var(--accent-neon);
+    bottom: -15px;
+    left: 20%;
+    border-radius: 5px;
+    box-shadow: 0 0 10px var(--accent-neon);
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+}
+
+/* Contenedor principal de la tarjeta */
+.card-container {
+    background-color: transparent;
+    width: 100%;
+    height: 400px;
+    perspective: 1000px;
+    cursor: pointer; /* Indica que interactúa al pasar el cursor */
+}
+
+/* Elemento que gira */
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    transform-style: preserve-3d;
+}
+
+/* Activación del giro con el cursor (Hover) */
+.card-container:hover .card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Estilos compartidos para frente y dorso */
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 20px;
+    overflow: hidden;
+    background-size: cover;
+    background-position: center;
+    border: 1px solid rgba(255,255,255,0.05);
+}
+
+/* ================= FRENTE DE LA TARJETA ================= */
+.front-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Capa semi-oscura para que se note la imagen pero resalte el texto */
+    background: linear-gradient(145deg, rgba(31, 40, 51, 0.85), rgba(11, 12, 16, 0.95));
+    z-index: 1;
+}
+
+.front-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.icon-wrapper {
+    width: 80px;
+    height: 80px;
+    background: rgba(102, 252, 241, 0.05);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 20px;
+    border: 1px solid rgba(102, 252, 241, 0.2);
+    box-shadow: 0 0 15px rgba(102, 252, 241, 0.1);
+}
+
+.front-content i {
+    font-size: 2.5rem;
+    color: var(--accent-neon);
+}
+
+.front-content h3 {
+    color: var(--text-white);
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+}
+
+/* Botón visual que invita a tocar/posicionar el cursor */
+.btn-flip {
+    background: transparent;
+    color: var(--accent-neon);
+    border: 1px solid var(--accent-neon);
+    padding: 10px 25px;
+    border-radius: 30px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+}
+
+.btn-flip i {
+    font-size: 1rem;
+}
+
+.card-container:hover .btn-flip {
+    background: var(--accent-neon);
+    color: var(--bg-dark);
+}
+
+/* ================= DORSO DE LA TARJETA (DETALLE) ================= */
+.card-back {
+    transform: rotateY(180deg);
+    border-color: rgba(102, 252, 241, 0.4);
+    box-shadow: 0 0 30px rgba(102, 252, 241, 0.2);
+}
+
+.back-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    /* Capa mucho más oscura para resaltar al máximo el detalle */
+    background: rgba(11, 12, 16, 0.93);
+    z-index: 1;
+}
+
+.back-content {
+    position: relative;
+    z-index: 2;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+}
+
+.back-content h3 {
+    color: var(--accent-neon);
+    font-size: 1.5rem;
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.back-content p {
+    font-size: 0.95rem;
+    color: var(--text-white);
+    margin-bottom: 20px;
+    line-height: 1.5;
+}
+
+.detail-list {
+    list-style: none;
+    text-align: left;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.detail-list li {
+    font-size: 0.95rem;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+}
+
+.detail-list li i {
+    color: var(--accent-neon);
+    font-size: 0.9rem;
+}
+
+/* ================= Footer y Contacto ================= */
+footer {
+    background: #050507;
+    padding: 80px 20px 30px;
+    text-align: center;
+    border-top: 1px solid #1f2833;
+    position: relative;
+}
+
+.footer-content {
+    max-width: 850px;
+    margin: 0 auto 60px;
+}
+
+.footer-title {
+    color: var(--accent-neon);
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 20px;
+}
+
+.quote {
+    font-size: 1.8rem;
+    font-weight: 300;
+    color: var(--text-white);
+    margin-bottom: 50px;
+    line-height: 1.5;
+    position: relative;
+    padding: 0 30px;
+}
+
+.quote::before {
+    content: '\201C';
+    color: rgba(102, 252, 241, 0.3);
+    font-size: 5rem;
+    font-family: serif;
+    position: absolute;
+    top: -30px;
+    left: -10px;
+}
+
+.btn-whatsapp {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    background: var(--whatsapp-green);
+    color: white;
+    padding: 18px 45px;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+    animation: heartbeat 2s infinite;
+}
+
+.btn-whatsapp i {
+    font-size: 1.8rem;
+}
+
+.btn-whatsapp:hover {
+    background: #1ebd5a;
+    animation: none;
+    transform: scale(1.05);
+    box-shadow: 0 10px 25px rgba(37, 211, 102, 0.5);
+}
+
+@keyframes heartbeat {
+    0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); }
+    15% { transform: scale(1.03); }
+    30% { transform: scale(1); box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+    100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+}
+
+.copyright {
+    font-size: 0.95rem;
+    color: #555;
+    padding-top: 25px;
+    border-top: 1px solid #151b22;
+}
+
+/* ================= Responsive Design ================= */
+@media (max-width: 900px) {
+    .hero h1 { font-size: 3.2rem; }
+    .quote { font-size: 1.4rem; }
+}
+
+@media (max-width: 768px) {
+    header { flex-direction: column; gap: 15px; padding: 15px 5%; }
+    nav ul { gap: 20px; }
+    .hero h1 { font-size: 2.8rem; }
+    .hero p { font-size: 1.1rem; }
+    .btn-whatsapp { padding: 15px 30px; font-size: 1.1rem; }
+}
+
+@media (max-width: 480px) {
+    nav ul { display: none; }
+    .hero h1 { font-size: 2.2rem; }
+}
